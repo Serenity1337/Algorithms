@@ -86,9 +86,11 @@ class LinkedList {
     let arrValues = []
     let node = this.head
     while (node !== null) {
-      console.log(node.value)
+      arrValues.push(node.value)
+      // console.log(node, 'linked')
       node = node.next
     }
+    return arrValues
   }
   reverse() {
     if (this.length === 1) {
@@ -112,15 +114,6 @@ class LinkedList {
     return this.print()
   }
 }
-
-const newLinkedList = new LinkedList(10)
-newLinkedList.addNode(5)
-newLinkedList.addNode(15)
-newLinkedList.prepend(20)
-newLinkedList.insert(2, 50)
-newLinkedList.delete(0)
-newLinkedList.print()
-newLinkedList.reverse()
-console.log('test', newLinkedList, 'test')
-// console.log(newLinkedList.delete(0), 'test')
-// console.log(newLinkedList)
+module.exports = {
+  LinkedList,
+}
